@@ -153,8 +153,7 @@ def worker_import_to_es_for_threading(data='a_raw_file.json', start_line=0, stop
         try:
             action = {
                 "_index": index,
-                "_type": doc_type,
-                  "_id": str(json.loads(row)["id"])
+                  "_id": str(json.loads(row)["id"]),
                 "_source": json.loads(row)
             }
         except Exception as e:
@@ -444,7 +443,7 @@ def run():
             # read JSON data
             with open(data, 'r') as f:
                 for line in f:
-                    es.index(index=index, doc_type=doc_type, 
+                    es.index(index=index, 
                         #id=2, 
                         body=json.loads(line)
                     )
@@ -459,7 +458,7 @@ def run():
             # read JSON data
             with open(data, 'r') as f:
                 for line in f:
-                    es.index(index=index, doc_type=doc_type, 
+                    es.index(index=index, 
                         #id=2, 
                         body=json.loads(line)
                     )
@@ -482,7 +481,7 @@ def run():
                 # read JSON data
                 with open(data, 'r') as f:
                     for line in f:
-                        es.index(index=index, doc_type=doc_type, 
+                        es.index(index=index, 
                             #id=2, 
                             body=json.loads(line)
                         )
@@ -538,7 +537,7 @@ def run():
                 # read JSON data
                 with open(data, 'r') as f:
                     for line in f:
-                        es.index(index=index, doc_type=doc_type, 
+                        es.index(index=index, 
                             #id=2, 
                             body=json.loads(line)
                         )
