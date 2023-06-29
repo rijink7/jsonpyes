@@ -154,6 +154,7 @@ def worker_import_to_es_for_threading(data='a_raw_file.json', start_line=0, stop
             action = {
                 "_index": index,
                 "_type": doc_type,
+                  "_id": str(json.loads(row)["id"])
                 "_source": json.loads(row)
             }
         except Exception as e:
