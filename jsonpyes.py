@@ -444,7 +444,7 @@ def run():
             with open(data, 'r') as f:
                 for line in f:
                     es.index(index=index, 
-                        #id=2, 
+                        id=str(json.loads(line)["id"]), 
                         body=json.loads(line)
                     )
             
@@ -459,7 +459,7 @@ def run():
             with open(data, 'r') as f:
                 for line in f:
                     es.index(index=index, 
-                        #id=2, 
+                        id=str(json.loads(line)["id"]), 
                         body=json.loads(line)
                     )
             
@@ -482,7 +482,7 @@ def run():
                 with open(data, 'r') as f:
                     for line in f:
                         es.index(index=index, 
-                            #id=2, 
+                            id=str(json.loads(line)["id"]), 
                             body=json.loads(line)
                         )
             else:
@@ -538,7 +538,7 @@ def run():
                 with open(data, 'r') as f:
                     for line in f:
                         es.index(index=index, 
-                            #id=2, 
+                            id=str(json.loads(line)["id"]),  
                             body=json.loads(line)
                         )
                 print("Successfully data imported!")
